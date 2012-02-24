@@ -57,14 +57,14 @@ Tabulous.setup do |config|
       #-------------------------------------------------------------------------------------------------------#
       #    TAB NAME         |    DISPLAY TEXT    |    PATH                  |    VISIBLE?    |    ENABLED?    #
       #-------------------------------------------------------------------------------------------------------#
-      [    :pictures_tab    ,    'Pictures'      ,    pictures_path         ,    true        ,    true        ],
-      [    :welcome_tab     ,    'Welcome'       ,    welcome_index_path    ,    true        ,    true        ],
       [    :welcome_tab     ,    'Welcome'       ,    root_path             ,    true        ,    true        ],
+      [    :pictures_tab    ,    'Pictures'      ,    pictures_path         ,    true        ,    true        ],
       #-------------------------------------------------------------------------------------------------------#
       #    TAB NAME         |    DISPLAY TEXT    |    PATH                  |    VISIBLE?    |    ENABLED?    #
       #-------------------------------------------------------------------------------------------------------#
     ]
   end
+
 
   #-------------
   #   ACTIONS
@@ -99,7 +99,7 @@ Tabulous.setup do |config|
   #---------------------
 
   # By default, you cannot click on the active tab.
-  config.active_tab_clickable = false
+  config.active_tab_clickable = true
 
   # By default, the subtabs HTML element is not rendered if it is empty.
   config.always_render_subtabs = false
@@ -123,7 +123,7 @@ Tabulous.setup do |config|
   # This gives you control over what class the <ul> element that wraps the tabs
   # will have.  Good for interfacing with third-party code like Twitter
   # Bootstrap.
-  # config.tabs_ul_class = "nav nav-pills"
+  config.tabs_ul_class = "nav nav-pills"
 
   # Set this to true to have subtabs rendered in markup that Twitter Bootstrap
   # understands.  If this is set to true, you don't need to call subtabs in
@@ -151,7 +151,7 @@ Tabulous.setup do |config|
   # head start or an easy way to prototype quickly.  Set this to false if
   # you are using Twitter Bootstrap.
   # 
-  config.css.scaffolding = true
+  config.css.scaffolding = false
 
   # You can tweak the colors of the generated CSS.
   #
