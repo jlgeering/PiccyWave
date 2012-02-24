@@ -1,4 +1,6 @@
 PiccyWave::Application.routes.draw do
+  resources :pictures
+
   get "welcome/index"
 
   # The priority is based upon order of creation:
