@@ -39,3 +39,4 @@ gem 'jquery-rails'
 
 gem 'haml-rails'
 gem 'tabulous'
+gem 'carrierwave'
