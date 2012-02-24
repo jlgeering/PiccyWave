@@ -4,7 +4,8 @@
   - @pictures.each do |picture|
     %li.span3
       .thumbnail
-        %img{:src => "http://placehold.it/260x180"}
+        = image_tag "http://placehold.it/260x180" unless picture.image?
+        = image_tag picture.image_url if picture.image?
         .caption
           %h5= picture.name
           %p
