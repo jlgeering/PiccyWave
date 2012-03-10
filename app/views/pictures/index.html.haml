@@ -5,7 +5,7 @@
     %li.span3
       .thumbnail
         = image_tag "http://placehold.it/260x180" unless picture.image?
-        = image_tag picture.image_url if picture.image?
+        = image_tag picture.image.thumb.url if picture.image?
         .caption
           %h5= picture.name
           %p
