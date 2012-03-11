@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20120224151445) do
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.string   "image"
+    t.string   "file"
   end
 
 end

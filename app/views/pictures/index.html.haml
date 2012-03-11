@@ -4,8 +4,8 @@
   - @pictures.each do |picture|
     %li.span3
       .thumbnail
-        = image_tag "http://placehold.it/260x180" unless picture.image?
-        = image_tag picture.image.thumb.url if picture.image?
+        = image_tag "http://placehold.it/210x210" unless picture.file?
+        = image_tag picture.file.small.url if picture.file?
         .caption
           %h5= picture.name
           %p
@@ -15,4 +15,7 @@
 
 %br
 
+%input#fileupload(type="file" name="picture[file]" style="display: none;"){ :data => {:url => pictures_path} }
+
 = link_to 'New Picture', new_picture_path
+

@@ -45,7 +45,17 @@ class PicturesController < ApplicationController
     respond_to do |format|
       if @picture.save
         format.html { redirect_to @picture, notice: 'Picture was successfully created.' }
-        format.json { render json: @picture, status: :created, location: @picture }
+        format.json {
+          render :json => [{
+            :name          => @picture.name,
+            :size          => @picture.file.size,
+            :url           => @picture.file.url,
+            :small_url     => @picture.file.small.url,
+            :thumbnail_url => @picture.file.thumb.url,
+            :delete_url    => picture_path(@picture),
+            :delete_type   => "DELETE"
+          }]
+        }
       else
         format.html { render action: "new" }
         format.json { render json: @picture.errors, status: :unprocessable_entity }
