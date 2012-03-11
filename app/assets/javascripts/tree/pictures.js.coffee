@@ -6,6 +6,6 @@ jQuery ->
     dataType: 'json',
     done: (e, data) ->
       $.each(data.result, (index, file) ->
-        $('<li class="span3 picture"><div class="thumbnail"><a href="'+file.delete_url+'" rel="nofollow" data-method="delete"><img src="'+file.small_url+'"/></a><div/></li>').appendTo('ul.thumbnails')
+        $('<li class="span3 picture"><a class="thumbnail" href="'+file.delete_url+'" rel="nofollow" data-method="delete"><img src="'+file.small_url+'"/></a></li>').appendTo('ul.thumbnails')
       )
   }

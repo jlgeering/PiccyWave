@@ -3,16 +3,16 @@
 %ul.thumbnails
   - @pictures.each do |picture|
     %li.span3.picture
-      .thumbnail
+      %a.thumbnail{ :href => picture_path(picture), :rel => "nofollow", :data => {:method => :delete} }
         = image_tag "http://placehold.it/210x210" unless picture.file?
-        %a{ :href => picture_path(picture), :rel => "nofollow", :data => {:method => :delete} }
-          = image_tag picture.file.small.url if picture.file?
-        .caption
-          %h5= picture.name
-          %p
-            = link_to 'Show', picture
-            = link_to 'Edit', edit_picture_path(picture)
-            = link_to 'Destroy', picture, :method => :delete
+        = image_tag picture.file.small.url if picture.file?
+        //%a.close &times;
+//        .caption
+//          %h5= picture.name
+//          %p
+//            = link_to 'Show', picture
+//            = link_to 'Edit', edit_picture_path(picture)
+//            = link_to 'Destroy', picture, :method => :delete
 
 %br
 
