@@ -12,7 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require ordered/jquery.ui.widget
-//= require ordered/jquery.iframe-transport
-//= require ordered/jquery.fileupload
+//= require jquery.fileupload
 //= require_tree ./tree
