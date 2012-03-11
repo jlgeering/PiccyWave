@@ -2,10 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 jQuery ->
-  $('#fileupload').fileupload {
+  $('#picture-upload').fileupload {
     dataType: 'json',
     done: (e, data) ->
       $.each(data.result, (index, file) ->
-        $('<li class="span3"><div class="thumbnail"><img src="'+file.small_url+'"/><div/></li>').appendTo('ul.thumbnails')
+        $('<li class="span3 picture"><div class="thumbnail"><a href="'+file.delete_url+'" rel="nofollow" data-method="delete"><img src="'+file.small_url+'"/></a><div/></li>').appendTo('ul.thumbnails')
       )
-  } 
+  }
